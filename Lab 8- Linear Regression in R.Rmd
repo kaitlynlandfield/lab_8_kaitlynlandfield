@@ -7,5 +7,16 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+salmon<-read_csv("salmon_imports.csv")
+```
+#Exploratory scatterplot
+```{r}
+salmon_scatter<- ggplot(salmon, aes(x = year, y= salmon_imports))+
+  geom_point()
+salmon_scatter
+
+#Yes it looks like it makes sense to use a linear regression.
 ```
 
